@@ -63,9 +63,9 @@ class YKPen(QWidget):
         screen_height = screen.availableSize().height()
 
         if screen_height < 1080:
-            self.setGeometry((screen_width - 1080) / 2, (screen_height - 600) / 2, 1080, 600)
+            self.setGeometry(int((screen_width - 1080) / 2), int((screen_height - 600) / 2), 1080, 600)
         else:
-            self.setGeometry((screen_width - 1080) / 2, (screen_height - 900) / 2, 1080, 900)
+            self.setGeometry(int((screen_width - 1080) / 2), int((screen_height - 900) / 2), 1080, 900)
 
         self.setLayout(self.main_layout)
 
@@ -77,8 +77,7 @@ class YKPen(QWidget):
 
         dark_theme_style = 'QPushButton {border: 1px solid rgb(100, 100, 100); border-radius: 5px; color: white} ' \
                            'QPushButton::hover {border: 1px solid rgb(100, 100, 100); border-radius: 5px; ' \
-                           'background: rgb(80, 80, 80); color: white} ' \
-                           'QToolTip {color: black}'
+                           'background: rgb(80, 80, 80); color: white} '
 
         self.open_button.setStyleSheet(dark_theme_style)
         self.save_file_button.setStyleSheet(dark_theme_style)
@@ -115,8 +114,8 @@ class YKPen(QWidget):
         self.top_left_layout.addLayout(self.database_operations_layout)
         self.top_layout.addLayout(self.settings_layout)
 
-        self.top_left_layout.setAlignment(Qt.AlignLeft)
-        self.settings_layout.setAlignment(Qt.AlignRight)
+        self.top_left_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        self.settings_layout.setAlignment(Qt.AlignmentFlag.AlignRight)
 
         self.main_layout.addLayout(self.title_layout)
         self.main_layout.addLayout(self.editor_layout)

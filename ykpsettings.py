@@ -45,7 +45,7 @@ class Settings(QWidget):
         app_name_label.setText("YKPen")
 
         app_version_label.setContentsMargins(15, 50, 0, 10)
-        app_version_label.setText("1.0.0")
+        app_version_label.setText("1.0.1")
 
         app_description_label.setContentsMargins(15, 0, 0, 10)
         app_description_label.setText("YKPen is a note app.\n"
